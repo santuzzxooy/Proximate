@@ -1,8 +1,5 @@
 import './App.css';
 import React from 'react';
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import useFetchLogin from './services/useFetchLogin';
-// import useFetchProducts from './services/useFetchProducts';
 
 import {
   createBrowserRouter,
@@ -13,9 +10,9 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from './pages/Login';
-import Welcome from './pages/Welcome';
 import Services from './pages/Services';
 import Header from './components/Header';
+import ProductDetail from './pages/ProductDetail';
 
 const router = createBrowserRouter([
   {
@@ -27,12 +24,12 @@ const router = createBrowserRouter([
     element: <Login />
   },
   {
-    path: '/welcome',
-    element: <Welcome />
-  },
-  {
     path: '/services',
     element: <Services />
+  },
+  {
+    path: '/services/:id',
+    element: <ProductDetail />
   },
 ])
 
@@ -43,18 +40,9 @@ function App() {
         <Header />
         <Sidebar />
 
+        <div className='simple-container'>
         <RouterProvider router={router} />
-
-        {/* <Router>
-          <Switch>
-            <Route path="/login" component={useFetchLogin} />
-            <Route path="/services" component={useFetchProducts} />
-          </Switch>
-        </Router> */}
-        
-        {/* SI LO HAGO ASI SE QUEDA EN BLANCO */}
-
-        
+        </div>
 
         <Footer />
       </div>

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import fetchProducts from "../services/products";
 
 function Services() {
+	const hasCredentials = !!localStorage.getItem("token");
+	const navigate = useNavigate();
 	const [loading, setLoading] = useState(false);
+
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
@@ -20,14 +24,36 @@ function Services() {
 
 			setTimeout(() => {
 				setLoading(false);
-			}, 4000);
+			}, 1200);
 		};
 
 		fetchData();
 	}, []);
 
+    const handleReadMore = (productId) => {
+        navigate(`/services/${productId}`);
+    };
+
+	const handleLogin = () => {
+		window.location.href = "/login";
+	};
+
+	
 	return (
-		<div className="loader">
+		<div>
+			<div className="loader">
+			<div>
+				{!hasCredentials && (
+					<div className="log-card">
+						<div className="log-cardss">
+							<h1>You don't have access</h1>
+							<p>Please login to get the products</p>
+							<button className="btn" onClick={handleLogin}>Go to login</button>
+						</div>
+						
+					</div>
+				)}
+        	</div>
 			{loading ? (
 				<ScaleLoader
 					color="rgba(204, 85, 17, 1)"
@@ -37,40 +63,28 @@ function Services() {
 					width={20}
 				/>
 			) : (
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+				<div className="card-container">
 					{products.map((product) => (
-						<div
-							key={product.id}
-							className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4"
-						>
-							<a href={product.path}>
+						<div className="card">
+							<a href="" className="btn" onClick={(e) => { e.preventDefault(); handleReadMore(product.id); }}>
 								<img
 									className="rounded-t-lg"
-									src={product.image}
-									alt={product.title}
+									src={product.image?product.image:"https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-icon-of-unavailable-image-illustration-in-vector-with-flat-design-vector-png-image_40969994.jpg"}
+									alt="image doesn't exist"
 								/>
 							</a>
-							<div className="p-5">
-								<a href={product.path}>
-									<h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-										{product.title}
-									</h5>
-								</a>
-								<p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-									{product.shortDescription}
-								</p>
-								<a
-									href={product.path}
-									className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-								>
-									Read more
-									{/* SVG y otros elementos pueden ir aquí si se necesita */}
-								</a>
+							<div className="card-content">
+								<h3>{product.title}</h3>
+								<p>{product.shortDescription}</p>
+								<a href="#" className="btn" onClick={(e) => { e.preventDefault(); handleReadMore(product.id); }}>Read more</a>
 							</div>
 						</div>
 					))}
 				</div>
+				
 			)}
+			
+		</div>
 		</div>
 	);
 }

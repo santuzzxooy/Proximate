@@ -1,5 +1,12 @@
 import React from "react";
 
+const handleLogout = () => {
+	localStorage.removeItem("token");
+	window.location.href = "/login";
+};
+
+const isAuthenticated = !!localStorage.getItem("token");
+
 function Header() {
 	return (
 		<header>
@@ -15,6 +22,11 @@ function Header() {
 							ProximateTest
 						</span>
 					</a>
+					{isAuthenticated && (
+                    <a>
+                        <button className="logout" onClick={handleLogout}>Logout</button>
+                    </a>
+               		 )}
 				</div>
 			</nav>
 		</header>

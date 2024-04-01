@@ -1,5 +1,7 @@
 import React from "react";
 
+const hasCredentials = !!localStorage.getItem("token");
+
 function Sidebar() {
 	return (
 		<div className="wrapper">
@@ -14,12 +16,11 @@ function Sidebar() {
 					<li>
 						<a href="/">Home</a>
 					</li>
+					{!hasCredentials && (
 					<li>
 						<a href="/login">login</a>
 					</li>
-					<li>
-						<a href="/welcome">welcome</a>
-					</li>
+					)}
 					<li>
 						<a href="/services">Services</a>
 					</li>

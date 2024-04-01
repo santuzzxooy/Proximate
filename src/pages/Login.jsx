@@ -17,10 +17,9 @@ function Login() {
 				const datos = JSON.parse(response?.data);
 				const token = datos.userToken;
 				localStorage.setItem("token", token);
-				console.log("Inicio de sesión exitoso");
 				navigate("/services");
 			} else {
-				console.error("Error al iniciar sesión:", response.status);
+				console.error("Login error:", response.status);
 			}
 		} catch (error) {
 			console.error("Error al realizar la solicitud:", error);
