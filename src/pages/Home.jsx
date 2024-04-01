@@ -1,9 +1,28 @@
 import React from "react";
 
+const hasCredentials = !!localStorage.getItem("token");
+const handleLogin = () => {
+	window.location.href = "/login";
+};
+
 function Home() {
 	return (
-		<>
+		<>	
+			{!hasCredentials && (
+				<div className="log-card">
+					<div className="log-cardss">
+						<h1>You don't have access</h1>
+						<p>Please login to get home</p>
+						<button className="btn" onClick={handleLogin}>Go to login</button>
+					</div>
+						
+				</div>
+			)}
+			{hasCredentials && (
 			<div className="contenedorCentrado">
+
+				<h1>Bienvenido</h1>
+
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -20,6 +39,7 @@ function Home() {
 					alt="???"
 				/>
 			</div>
+			)}
 		</>
 	);
 }

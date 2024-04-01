@@ -69,7 +69,8 @@ function Services() {
 							<a href="" className="btn" onClick={(e) => { e.preventDefault(); handleReadMore(product.id); }}>
 								<img
 									className="rounded-t-lg"
-									src={product.image?product.image:"https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-icon-of-unavailable-image-illustration-in-vector-with-flat-design-vector-png-image_40969994.jpg"}
+									src={product.image}
+									onerror="this.onerror=null; this.src='https://png.pngtree.com/png-vector/20221125/ourmid/pngtree-icon-of-unavailable-image-illustration-in-vector-with-flat-design-vector-png-image_40969994.jpg'"
 									alt="image doesn't exist"
 								/>
 							</a>
