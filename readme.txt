@@ -1,4 +1,3 @@
-Solo falta que cargue la fucking descripcion de los articulos
+Listo, segun yo todo quedo bien, y lo que estaba intentando hacer estaba de mas ¿?
 
-ya tengo el codigo segun yo bien
-no he tenido tiempo pero lo arreglo temprano en la mañana¿?
+una noche larga, por fin...
