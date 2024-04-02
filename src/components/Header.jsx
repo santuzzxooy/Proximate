@@ -2,7 +2,7 @@ import React from "react";
 
 const handleLogout = () => {
 	localStorage.removeItem("token");
-	window.location.href = "/login";
+	window.location.href = "/proximate/login";
 };
 
 const isAuthenticated = !!localStorage.getItem("token");
