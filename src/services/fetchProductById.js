@@ -1,5 +1,6 @@
-export default function fetchProductById(id, token) {
-    const url = `https://serveless.proximateapps-services.com.mx/proximatetools/dev/webadmin/testproximate/getproductbyid?id=${id}`;
+export default function fetchProductById(token) {
+    const url = 
+        'https://serveless.proximateapps-services.com.mx/proximatetools/dev/webadmin/testproximate/getproducts';
     const payload = {
         userToken: token,
     };

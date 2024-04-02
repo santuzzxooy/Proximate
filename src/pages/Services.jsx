@@ -7,7 +7,6 @@ function Services() {
 	const hasCredentials = !!localStorage.getItem("token");
 	const navigate = useNavigate();
 	const [loading, setLoading] = useState(false);
-
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
