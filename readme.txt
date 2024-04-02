@@ -1,3 +1,0 @@
-Listo, segun yo todo quedo bien, y lo que estaba intentando hacer estaba de mas ¿?
-
-una noche larga, por fin...

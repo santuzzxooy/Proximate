@@ -16,7 +16,7 @@ import ProductDetail from './pages/ProductDetail';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/proximate',
     element: <Home />
   },
   {
