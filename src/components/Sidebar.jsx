@@ -14,15 +14,15 @@ function Sidebar() {
 				<div className="title">Menu</div>
 				<ul className="list-items">
 					<li>
-						<a href="/">Home</a>
+						<a href="/proximate">Home</a>
 					</li>
 					{!hasCredentials && (
 					<li>
-						<a href="/login">login</a>
+						<a href="/proximate/login">login</a>
 					</li>
 					)}
 					<li>
-						<a href="/services">Services</a>
+						<a href="/proximate/services">Services</a>
 					</li>
 				</ul>
 			</nav>

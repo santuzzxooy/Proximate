@@ -17,7 +17,7 @@ function Login() {
 				const datos = JSON.parse(response?.data);
 				const token = datos.userToken;
 				localStorage.setItem("token", token);
-				navigate("/services");
+				navigate("/proximate/services");
 			} else {
 				console.error("Login error:", response.status);
 			}

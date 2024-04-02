@@ -2,7 +2,7 @@ import React from "react";
 
 const hasCredentials = !!localStorage.getItem("token");
 const handleLogin = () => {
-	window.location.href = "/login";
+	window.location.href = "/proximate/login";
 };
 
 function Home() {

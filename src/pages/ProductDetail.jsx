@@ -23,7 +23,7 @@ function ProductDetail() {
     },);
 
     const handleBack = () => {
-		window.location.href = "/services";
+		window.location.href = "/proximate/services";
 	};
 
     return (

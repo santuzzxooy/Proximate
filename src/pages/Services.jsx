@@ -30,11 +30,11 @@ function Services() {
 	}, []);
 
     const handleReadMore = (productId) => {
-        navigate(`/services/${productId}`);
+        navigate(`/proximate/services/${productId}`);
     };
 
 	const handleLogin = () => {
-		window.location.href = "/login";
+		window.location.href = "/proximate/login";
 	};
 
 	
