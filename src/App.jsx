@@ -20,15 +20,15 @@ const router = createBrowserRouter([
     element: <Home />
   },
   {
-    path: '/login',
+    path: '/proximate/login',
     element: <Login />
   },
   {
-    path: '/services',
+    path: '/proximate/services',
     element: <Services />
   },
   {
-    path: '/services/:id',
+    path: '/proximate/services/:id',
     element: <ProductDetail />
   },
 ])
