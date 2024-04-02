@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import fetchProductById from "../services/fetchProductById";
+import fetchProducts from "../services/products";
 
 function ProductDetail() {
     const { id } = useParams();
@@ -9,7 +9,7 @@ function ProductDetail() {
     useEffect(() => {
         const fetchData = async () => {
             const token = localStorage.getItem("token");
-            const response = await fetchProductById(token);
+            const response = await fetchProducts(token);
             console.log(response);
             if (response?.status === true) {
                 const data = JSON.parse(response?.data);
